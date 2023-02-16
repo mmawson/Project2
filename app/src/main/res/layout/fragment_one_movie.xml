@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backcover"
+    tools:context=".ui.OneMovie.OneMovieFragment"
+    android:padding="8dp">
+    <ImageView
+        android:id="@+id/large_image"
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:scaleType="fitStart"
+        app:layout_constraintHorizontal_weight="2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/title_text"
+        app:layout_constraintTop_toTopOf="@id/title_text"/>
+    <TextView
+        android:layout_marginVertical="@dimen/cardview_default_elevation"
+        android:id="@+id/title_text"
+        android:textFontWeight="16"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/year_text"
+        app:layout_constraintLeft_toRightOf="@id/large_image"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_weight="3"/>
+    <TextView
+        android:id="@+id/year_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/large_image"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title_text"
+        app:layout_constraintHorizontal_weight="3"/>
+    <LinearLayout
+        android:id="@+id/rating_wrapper"
+        android:layout_marginTop="10dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/large_image"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/year_text">
+
+        <RatingBar
+            android:id="@+id/movie_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="10"
+            android:stepSize=".1"
+            style="@style/Base.Widget.AppCompat.RatingBar.Small"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@id/large_image"
+        app:layout_constraintHorizontal_bias="0.159"
+        app:layout_constraintLeft_toRightOf="@id/large_image"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rating_wrapper"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/simpleText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="0dp"
+        android:text="Staring: "
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/large_image" />
+
+    <TextView
+        android:id="@+id/staringActors"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="false"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="14dp"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toRightOf="@id/simpleText"
+        app:layout_constraintTop_toBottomOf="@id/large_image" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+<!--
+    <EditText
+        android:id="@+id/title_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@id/movie_image"
+        app:layout_constraintHorizontal_weight="3"/>
+    <ImageView
+        android:id="@+id/movie_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:textAlignment="center"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+ <androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroud"
+    tools:context=".ui.OneMovie.OneMovieFragment"
+    android:padding="8dp">
+
+    <ImageView
+        android:id="@+id/large_image"
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:scaleType="fitStart"
+        app:layout_constraintHorizontal_weight="2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/title_text"
+        app:layout_constraintTop_toTopOf="@id/title_text"/>
+    <EditText
+        android:id="@+id/title_text"
+        android:text="Foo Bar "
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/large_image"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="parent"
+        app:layout_constraintHorizontal_weight="3"/>
+    <EditText
+        android:id="@+id/year_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/large_image"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title_text"
+        app:layout_constraintHorizontal_weight="3"/>
+    <LinearLayout
+        android:id="@+id/rating_wrapper"
+        android:layout_marginTop="10dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/large_image"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/year_text">
+        <RatingBar
+            android:id="@+id/movie_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="10"
+            android:stepSize="1"
+            style="@style/Base.Widget.AppCompat.RatingBar.Small"
+            />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TESTING TESTING"
+        app:layout_constraintTop_toBottomOf="@id/rating_wrapper"
+        app:layout_constraintLeft_toRightOf="@id/large_image"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/large_image"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout> -->
