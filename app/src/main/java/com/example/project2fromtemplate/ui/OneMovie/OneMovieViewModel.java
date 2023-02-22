@@ -12,15 +12,15 @@ import java.util.Map;
 
 public class OneMovieViewModel extends ViewModel {
 
-    private final MutableLiveData<Integer> mImage;
-    private final MutableLiveData<String> mTitle, mDescription, mYear, mActors;
-    private final MutableLiveData<Float> mRating;
-    int i = 5;
+    private MutableLiveData<Integer> mImage;
+    private MutableLiveData<String> mTitle, mDescription, mYear, mActors;
+    private MutableLiveData<Float> mRating;
+    public int j= 0;
     private MovieData md = new MovieData();
     List<Map<String, ?>> moviesList = md.getMoviesList();
-    HashMap movie = md.getItem(i);
 
     public OneMovieViewModel() {
+        HashMap movie = md.getItem(j);
         mDescription = new MutableLiveData<>();
         mDescription.setValue((String) movie.get("description"));
         mImage = new MutableLiveData<>();
@@ -30,13 +30,31 @@ public class OneMovieViewModel extends ViewModel {
         mYear = new MutableLiveData<>();
         mYear.setValue((String) movie.get("year"));
         mRating = new MutableLiveData<Float>();
-        mRating.setValue((float) md.getReview(i));
+        mRating.setValue((float) md.getReview(j));
 //        mRating.setValue((Float) movie.get("rating"));
         mActors = new MutableLiveData<>();
         mActors.setValue((String) movie.get("stars"));
 
         //mRating = new MutableLiveData<>();
         //mRating.setValue((double) movie.get("rating"));
+    }
+
+    public void update(int i) {
+        j = i;
+        HashMap movie = md.getItem(j);
+        mDescription = new MutableLiveData<>();
+        mDescription.setValue((String) movie.get("description"));
+        mImage = new MutableLiveData<>();
+        mImage.setValue((Integer) movie.get("image"));
+        mTitle = new MutableLiveData<>();
+        mTitle.setValue((String) movie.get("name"));
+        mYear = new MutableLiveData<>();
+        mYear.setValue((String) movie.get("year"));
+        mRating = new MutableLiveData<Float>();
+        mRating.setValue((float) md.getReview(j));
+//        mRating.setValue((Float) movie.get("rating"));
+        mActors = new MutableLiveData<>();
+        mActors.setValue((String) movie.get("stars"));
     }
 
     public LiveData<Integer> getImage() {

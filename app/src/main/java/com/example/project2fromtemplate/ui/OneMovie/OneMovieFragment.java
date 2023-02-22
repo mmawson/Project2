@@ -19,16 +19,22 @@ import com.example.project2fromtemplate.databinding.FragmentOneMovieBinding;
 
 public class OneMovieFragment extends Fragment {
 
+    private int movieNumber;
     private FragmentOneMovieBinding binding;
 
     public static OneMovieFragment newInstance() {
         return new OneMovieFragment();
     }
 
+    public void setMovieNumber(int i) {
+        movieNumber = i;
+    }
+
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
         OneMovieViewModel oneMovieViewModel =
                 new ViewModelProvider(this).get(OneMovieViewModel.class);
-
+        oneMovieViewModel.update(movieNumber);
         binding = FragmentOneMovieBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
